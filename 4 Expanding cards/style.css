@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box; /* to avoid width problems if padding */
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background: black;
+  background-image: url("assets/blackhole.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  width: 80vw;
+}
+
+.panel {
+  height: 70vh;
+  border-radius: 50px;
+  border: 0.1px solid rgba(255, 255, 255, 0.311);
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.096);
+  backdrop-filter: blur(5px);
+  filter: url(#lensFilter) saturate(100%) brightness(2);
+  transition:
+    flex 0.7s linear(
+      0,
+      0.002 0.6%,
+      0.006 1.2%,
+      0.014 1.8%,
+      0.026 2.5%,
+      0.041 3.2%,
+      0.059 3.9%,
+      0.108 5.5%,
+      0.155 6.8%,
+      0.215 8.3%,
+      0.474 14.3%,
+      0.584 17%,
+      0.64 18.5%,
+      0.69 19.9%,
+      0.736 21.3%,
+      0.775 22.6%,
+      0.812 23.9%,
+      0.847 25.3%,
+      0.879 26.7%,
+      0.907 28.1%,
+      0.932 29.5%,
+      0.955 31%,
+      0.974 32.5%,
+      0.991 34%,
+      1.002 35.3%,
+      1.013 36.7%,
+      1.028 39.5%,
+      1.037 42.6%,
+      1.041 46.2%,
+      1.037 51.4%,
+      1.014 65.7%,
+      1.004 74.4%,
+      0.999 84.9%,
+      1
+    );
+}
+
+.panel:hover {
+  flex: 5;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
